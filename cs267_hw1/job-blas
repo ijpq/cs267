@@ -1,0 +1,9 @@
+#!/bin/bash -l 
+#SBATCH -p debug
+#SBATCH -N 1
+#SBATCH -t 00:01:00 
+#SBATCH -J Blas_job 
+#SBATCH -o MyBLASOutputFile.%j.out
+#SBATCH -e MyBLASErrorFile.%j.err
+
+srun -n 1 -N 1 --cpu-freq=2400000 ./benchmark-blas
